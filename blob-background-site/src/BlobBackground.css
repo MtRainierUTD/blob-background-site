@@ -1,0 +1,135 @@
+.blob-container {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+  background: none;
+}
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.5;
+  filter: blur(60px);
+  /*mix-blend-mode: screen;*/
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+/* Blob 1 */
+.blob1 {
+  width: 400px;
+  height: 400px;
+  top: 10%;
+  left: 20%;
+  animation: float1 12s infinite;
+}
+
+/* Blob 2 */
+.blob2 {
+  width: 500px;
+  height: 500px;
+  top: 40%;
+  left: 60%;
+  animation: float2 30s infinite;
+}
+
+/* Blob 3 */
+.blob3 {
+  width: 350px;
+  height: 350px;
+  top: 70%;
+  left: 30%;
+  animation: float3 25s infinite;
+}
+
+/* Blob 4 */
+.blob4 {
+  width: 125px;
+  height: 125px;
+  top: 50%;
+  left: 50%;
+  animation: float4 25s infinite;
+}
+
+/* Animations */
+@keyframes float1 {
+  0%   { transform: translate(0px, 0px) scale(1); }
+  15%  { transform: translate(-500px, 40px) scale(1.2); }
+  70%  { transform: translate(0px, 600px) scale(0.3); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+
+@keyframes float2 {
+  0%   { transform: translate(0px, 0px) scale(1); }
+  25%  { transform: translate(300px, -200px) scale(1.5); }
+  50%  { transform: translate(-400px, 300px) scale(2.15); }
+  75%  { transform: translate(200px, 500px) scale(0.8); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+
+@keyframes float3 {
+  0%   { transform: translate(0px, 0px) scale(1); }
+  30%  { transform: translate(140px, -130px) scale(1.1); }
+  60%  { transform: translate(-130px, 150px) scale(0.95); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+
+@keyframes float4 {
+  0%   { transform: translate(0px, 0px) scale(1); }
+  30%  { transform: translate(250px, -30px) scale(2.1); }
+  60%  { transform: translate(130px, 150px) scale(0.8); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+
+/* morph time*/
+
+.morph-blob {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  /*mix-blend-mode: overlay;*/
+  border-radius: 50%;
+  filter: blur(120px);
+  animation: morph 20s ease-in-out infinite;
+  z-index: 0;
+}
+
+/* You can position these anywhere you like */
+.morph1 {
+  top: 20%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.morph2 {
+  top: 60%;
+  left: 70%;
+  animation-delay: 5s;
+}
+
+/* Morphing animation using clip-path polygon points */
+@keyframes morph {
+  0% {
+    border-radius: 42% 58% 65% 35% / 55% 46% 54% 45%;
+    transform: scale(1) translate(0px, 0px);
+  }
+  25% {
+    border-radius: 54% 46% 72% 28% / 34% 55% 45% 66%;
+    transform: scale(1.1) translate(50px, -120px);
+  }
+  50% {
+    border-radius: 61% 39% 33% 67% / 53% 67% 33% 47%;
+    transform: scale(1.05) translate(-120px, 150px);
+  }
+  75% {
+    border-radius: 45% 55% 60% 40% / 60% 40% 60% 40%;
+    transform: scale(1.1) translate(150px, -15px);
+  }
+  100% {
+    border-radius: 42% 58% 65% 35% / 55% 46% 54% 45%;
+    transform: scale(1) translate(0px, 0px);
+  }
+}
+

@@ -2,7 +2,7 @@ import React from "react";
 import BlobBackground from "./BlobBackground";
 import "./index.css";
 
-const App = () => {
+function App() {
   return (
     <>
       <BlobBackground />
@@ -12,6 +12,6 @@ const App = () => {
       </div>
     </>
   );
-};
+}
 
 export default App;
